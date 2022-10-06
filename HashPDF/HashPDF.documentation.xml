@@ -1,0 +1,264 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HashPDF</name>
+    </assembly>
+    <members>
+        <member name="T:HashPDF.Atributtes.AllowedExtensionsAttribute">
+            <summary>
+            Source File:   AllowedExtensionsAttribute.cs                                             
+            Description:   Attribute Class
+            Author(es):    Edward Steven Hernández Lambraño
+            Date:          03/10/2022
+            Version:       1.0.0
+            Copyright(c), 2022 
+            </summary>
+        </member>
+        <member name="M:HashPDF.Atributtes.AllowedExtensionsAttribute.#ctor(System.String[])">
+            <summary>
+            Constructor
+            </summary>
+            <param name="extensions"></param>
+        </member>
+        <member name="T:HashPDF.Controllers.PdfController">
+            <summary>
+            Source File:   PdfController.cs                                             
+            Description:   Class Controller
+            Author(es):    Edward Steven Hernández Lambraño
+            Date:          03/10/2022
+            Version:       1.0.0
+            Copyright(c), 2022 
+            </summary>
+        </member>
+        <member name="M:HashPDF.Controllers.PdfController.UploadFile(HashPDF.Models.Request.UploadFileRequest)">
+            <summary>
+            Carga archivo PDF
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HashPDF.Controllers.PdfController.ConvertToPDF(HashPDF.Models.Request.ConvertToPDFRequest)">
+            <summary>
+            Convierte byte array a PDF
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HashPDF.Controllers.PdfController.CheckHashFile(HashPDF.Models.Request.UploadFileRequest)">
+            <summary>
+            Comprueba Hash del archivo cargado
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HashPDF.Controllers.PdfController.ExcecuteResponse``1(HashPDF.Models.Response.ResponseModel{``0})">
+            <summary>
+            Respuesta generica para los controladores
+            </summary>
+            <param name="responseModel"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HashPDF.Models.Request.ConvertToPDFRequest">
+            <summary>
+            Source File:   ConvertByteArrayRequest.cs                                             
+            Description:   Response Class
+            Author(es):    Edward Steven Hernández Lambraño
+            Date:          05/10/2022
+            Version:       1.0.0
+            Copyright(c), 2022 
+            </summary>
+        </member>
+        <member name="P:HashPDF.Models.Request.ConvertToPDFRequest.FileByteArray">
+            <summary>
+            PDF en string base64
+            </summary>
+            <example>JVBERi0xLjcKJeLjz9MKMiAwIG9iago8PC9UeXBlL0ZvbnQvU3VidHlwZS9UeXBlMS9CYXNlRm9udC9Db3VyaWVyLU</example>
+        </member>
+        <member name="P:HashPDF.Models.Request.ConvertToPDFRequest.FileName">
+            <summary>
+            Nombre de salida del archivo
+            </summary>
+            <example>Archivo.pdf</example>
+        </member>
+        <member name="T:HashPDF.Models.Request.UploadFileRequest">
+            <summary>
+            Source File:   UploadFileModel.cs                                             
+            Description:   Request Model Class
+            Author(es):    Edward Steven Hernández Lambraño
+            Date:          03/10/2022
+            Version:       1.0.0
+            Copyright(c), 2022 
+            </summary>
+        </member>
+        <member name="P:HashPDF.Models.Request.UploadFileRequest.File">
+            <summary>
+            File
+            </summary>
+            <example>Documento.pdf</example>
+        </member>
+        <member name="T:HashPDF.Models.Response.ResponseModel`1">
+            <summary>
+            Source File:   Response.cs                                             
+            Description:   Model Class - Response
+            Author(es):    Edward Steven Hernández Lambraño
+            Date:          03/10/2022
+            Version:       1.0.0
+            Copyright(c), 2022 
+            </summary>
+        </member>
+        <member name="P:HashPDF.Models.Response.ResponseModel`1.Code">
+            <summary>
+            Code
+            </summary>
+            <example>200</example>
+        </member>
+        <member name="P:HashPDF.Models.Response.ResponseModel`1.Message">
+            <summary>
+            Message
+            </summary>
+            <example>Solicitud realizada con éxito</example>
+        </member>
+        <member name="P:HashPDF.Models.Response.ResponseModel`1.Data">
+            <summary>
+            ResponseData
+            </summary>
+            <example>[{id:12345}]</example>
+        </member>
+        <member name="M:HashPDF.Models.Response.ResponseModel`1.Success(`0)">
+            <summary>
+            Asigna respuesta exitosa.
+            </summary>
+            <param name="responseData"></param>
+        </member>
+        <member name="M:HashPDF.Models.Response.ResponseModel`1.InternalServerError">
+            <summary>
+            Asigna error interno.
+            </summary>
+        </member>
+        <member name="T:HashPDF.Models.Response.UploadFileResponse">
+            <summary>
+            Source File:   UploadFileResponse.cs                                             
+            Description:   Response Class
+            Author(es):    Edward Steven Hernández Lambraño
+            Date:          03/10/2022
+            Version:       1.0.0
+            Copyright(c), 2022 
+            </summary>
+        </member>
+        <member name="P:HashPDF.Models.Response.UploadFileResponse.FirstHash">
+            <summary>
+            Código Hash del documento original
+            </summary>
+            <example>8decc8571946d4cd70a024949e033a2a2a54377fe9f1c1b944c20f9ee11a9e51</example>
+        </member>
+        <member name="P:HashPDF.Models.Response.UploadFileResponse.LastHash">
+            <summary>
+            Código Hash del documento luego de la marca de agua
+            </summary>
+            <example>8decc8571946d4cd70a024949e033a2a2a54377fe9f1c1b944c20f9ee11a9e51</example>
+        </member>
+        <member name="P:HashPDF.Models.Response.UploadFileResponse.File">
+            <summary>
+            Archivo en base64
+            </summary>
+            <example>JVBERi0xLjcKJeLjz9MKMiAwIG9iago8PC9UeXBlL0ZvbnQvU3VidHlwZS9UeXBlMS9CYXNlRm9udC9Db3VyaWVyLU</example>
+        </member>
+        <member name="T:HashPDF.Resources.CommonResource">
+            <summary>
+              Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+            </summary>
+        </member>
+        <member name="P:HashPDF.Resources.CommonResource.ResourceManager">
+            <summary>
+              Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+            </summary>
+        </member>
+        <member name="P:HashPDF.Resources.CommonResource.Culture">
+            <summary>
+              Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+              búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+            </summary>
+        </member>
+        <member name="P:HashPDF.Resources.CommonResource.AllowFiles">
+            <summary>
+              Busca una cadena traducida similar a Tipo de archivo no permitido..
+            </summary>
+        </member>
+        <member name="P:HashPDF.Resources.CommonResource.InternalServerError">
+            <summary>
+              Busca una cadena traducida similar a Ha ocurrido un error interno, por favor intentelo más tarde..
+            </summary>
+        </member>
+        <member name="P:HashPDF.Resources.CommonResource.Required">
+            <summary>
+              Busca una cadena traducida similar a Campo {0} obligatorio..
+            </summary>
+        </member>
+        <member name="P:HashPDF.Resources.CommonResource.SuccessRequest">
+            <summary>
+              Busca una cadena traducida similar a Solicitud exitosa..
+            </summary>
+        </member>
+        <member name="P:HashPDF.Resources.CommonResource.VerificationCode">
+            <summary>
+              Busca una cadena traducida similar a Código de verificación seguro.
+            </summary>
+        </member>
+        <member name="T:HashPDF.Services.CiphierService">
+            <summary>
+            Source File:   CiphierService.cs                                             
+            Description:   Service Class
+            Author(es):    Edward Steven Hernández Lambraño
+            Date:          03/10/2022
+            Version:       1.0.0
+            Copyright(c), 2022 
+            </summary>
+        </member>
+        <member name="M:HashPDF.Services.CiphierService.ProccessFile(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Procesa el archivo pdf generando hash y asignando marca de agua al mismo.
+            </summary>
+            <param name="formFile"></param>
+            <returns>UploadFileResponse</returns>
+        </member>
+        <member name="M:HashPDF.Services.CiphierService.CheckHashFile(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Obtiene el Hash del archivo 
+            </summary>
+            <param name="formFile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HashPDF.Services.CiphierService.GetHashByByteArray(System.Byte[])">
+            <summary>
+            Obtiene hash del archivo pdf.
+            </summary>
+            <param name="formFile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HashPDF.Services.CiphierService.AddHashToPdf(System.Byte[],System.String)">
+            <summary>
+            Agrega el hash al PDF
+            </summary>
+            <param name="file"></param>
+            <param name="hash"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HashPDF.Services.CiphierService.AddWaterMark(iTextSharp.text.pdf.PdfContentByte,System.String,iTextSharp.text.pdf.BaseFont,iTextSharp.text.BaseColor)">
+            <summary>
+            Agrega una marca de agua con el código de seguridad
+            </summary>
+            <param name="pdfContentByte"></param>
+            <param name="text"></param>
+            <param name="font"></param>
+            <param name="color"></param>
+        </member>
+        <member name="M:HashPDF.Services.CiphierService.AddHashText(iTextSharp.text.pdf.PdfContentByte,iTextSharp.text.pdf.BaseFont,System.String)">
+            <summary>
+            Agrega texto con el código de seguridad - Es un método alterno para agregar el texto del hash
+            </summary>
+            <param name="pdfContentByte"></param>
+            <param name="baseFont"></param>
+            <param name="text"></param>
+        </member>
+    </members>
+</doc>
